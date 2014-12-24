@@ -1,0 +1,7 @@
+$include /etc/hotplug2-common.rules
+
+DEVICENAME ~~ (hvc) {
+        nothrottle
+        makedev /dev/%DEVICENAME% 0666
+        next
+}

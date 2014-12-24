@@ -1,0 +1,11 @@
+diff -uNr linux-2.6.31.10.phy/include/linux/phy.h linux-2.6.31.10.new/include/linux/phy.h
+--- linux-2.6.31.10.phy/include/linux/phy.h	2010-04-12 15:58:52.000000000 +0300
++++ linux-2.6.31.10.new/include/linux/phy.h	2010-04-12 15:59:28.000000000 +0300
+@@ -24,6 +24,7 @@
+ #include <linux/mii.h>
+ #include <linux/timer.h>
+ #include <linux/workqueue.h>
++#include <linux/skbuff.h>
+ 
+ #include <asm/atomic.h>
+ 

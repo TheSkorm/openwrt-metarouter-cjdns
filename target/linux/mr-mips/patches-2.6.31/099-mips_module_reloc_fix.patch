@@ -1,0 +1,12 @@
+diff -uNr linux-2.6.31.10/arch/mips/kernel/module.c linux-2.6.31.10.mod/arch/mips/kernel/module.c
+--- linux-2.6.31.10/arch/mips/kernel/module.c	2010-04-12 13:37:22.000000000 +0300
++++ linux-2.6.31.10.mod/arch/mips/kernel/module.c	2010-04-12 13:42:46.000000000 +0300
+@@ -191,7 +191,7 @@
+ #ifdef CONFIG_64BIT
+ 	return (KSEGX((unsigned long)ptr) == CKSEG0);
+ #else
+-	return (KSEGX(ptr) == KSEG0);
++	return ((_ACAST32_ (ptr)) & 0xf0000000) == 0xc0000000;
+ #endif
+ }
+ 
